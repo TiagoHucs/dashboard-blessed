@@ -1,0 +1,15 @@
+{
+  "name": "dashboard-blessed",
+  "version": "1.0.0",
+  "description": "testando o graficos no terminal com blessed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tiago S. Hucs",
+  "license": "ISC",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.11.0"
+  }
+}
