@@ -1,4 +1,5 @@
 
+var ServiceISS = require('./service');
 var blessed = require('blessed')
 , contrib = require('blessed-contrib')
 , screen = blessed.screen()
@@ -27,8 +28,11 @@ var lineData = {
 
  line.setData([lineData, lineData2])
 
+var issData = {};
+issData = ServiceISS.obterPositionISS();
+
 //cria grafico mapa
-var map = grid.set(0, 1, 2, 1, contrib.map, {label: 'Servers Location'})
+var map = grid.set(0, 1, 2, 1, contrib.map, {label: 'Location of '})
 map.addMarker({"lon" : "-79.0000", "lat" : "37.5000", color: "red", char: "X" })
 
 //cria grafico barras
@@ -73,10 +77,24 @@ var donut = grid.set(3, 1, 1, 1,contrib.donut,{
 	]
   });
 
+  //loop and data on bar chart
+function loop() {
+  var random = Math.round(Math.random()*10);
+  bar.setData({
+    titles: ['alpha', 'bravo','chalie','delta'],
+    data: [5, random, 15, 8]
+  })
+  if(issData?.name !== undefined && issData !== null){
+    map.setLabel(issData.name);
+  }
+  screen.render();
+}
+loop()
+setInterval(loop, 1000)
+
 
 //teclas de atalho
 screen.key(['escape', 'q', 'C-c'], function(ch, key) {
 return process.exit(0);
 });
 
-screen.render()
