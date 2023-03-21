@@ -1,8 +1,5 @@
-# ChatWebSocket
-simple ISS monitoring application
-
-Using: axios, blessed and iss-api
-
+# ISS Monitoring
+A simple application that monitoring international space station positioning in real time.
 
 start server:
 ```
