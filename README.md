@@ -9,4 +9,4 @@ start server:
 node index
 ```
 
-<img src="https://github.com/TiagoHucs/iss-monitor/blob/master/terminal.PNG" width="100%"/>
+<img src="https://github.com/TiagoHucs/iss-monitor/blob/main/terminal.png" width="100%"/>
